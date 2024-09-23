@@ -9,6 +9,19 @@ void setup() {
   pinMode(tachPin, INPUT); // Set tachPin as input
   pinMode(ledPin, OUTPUT); // Set ledPin as output
   Serial.begin(9600); // Start serial communication
+
+    // Light the LED for 1.5 seconds at startup
+  digitalWrite(ledPin, HIGH); // Turn LED on
+  delay(1500); // Wait for 1.5 seconds
+  digitalWrite(ledPin, LOW); // Turn LED off
+  
+  // Blink the LED twice with 250ms delay
+  for (int i = 0; i < 2; i++) {
+    digitalWrite(ledPin, HIGH); // Turn LED on
+    delay(250); // Wait 250 milliseconds
+    digitalWrite(ledPin, LOW); // Turn LED off
+    delay(250); // Wait 250 milliseconds
+  }
 }
 
 void loop() {
